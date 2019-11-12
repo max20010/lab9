@@ -7,24 +7,55 @@ int _tmain(int argc, _TCHAR* argv[])
 {
 	setlocale(LC_ALL, "ru");
 	string s1, s2;
-	int x;
+	int x,anim,color;
 	cout << "Введите год: ";
 	cin >> x;
+	x -= 4;
 	x %= 60;
-	x /= 12;
-	switch (x)
+	color = x / 12;
+	anim = x % 12;
+	cout << color <<" "<<anim << " "<<x << endl;
+	switch (anim)
 	{
-	case 1:s1 = "крысы"
+	case 0:s2 = "крысы";
 		break;
-	case 2:
+	case 1:s2 = "коровы";
 		break;
-	case 3:
+	case 2:s2 = "тигра";
 		break;
-	case 4:
+	case 3:s2 = "зайца";
 		break;
-	case 5:
+	case 4:s2 = "дракона";
 		break;
-
+	case 5:s2 = "змеи";
+		break;
+	case 6:s2 = "лошади";
+		break;
+	case 7:s2 = "овцы";
+		break;
+	case 8:s2 = "обезьяны";
+		break;
+	case 9:s2 = "курицы";
+		break;
+	case 10:s2 = "собаки";
+		break;
+	case 11:s2 = "свиньи";
+		break;
 	}
+
+	switch (color)
+	{
+	case 0:s1 = (anim != 2 && anim != 3 && anim != 4) ? "зелёной " : "зеленого ";
+		break;
+	case 1:s1 = (anim != 2 && anim != 3 && anim != 4) ? "красной ": "красного ";
+		break;
+	case 2:s1 = (anim != 2 && anim != 3 && anim != 4) ? "жёлтой ": "желтого ";
+		break;
+	case 3:s1 = (anim != 3 && anim != 4 && anim != 5) ? "белой ": "белого ";
+		break;
+	case 4:s1 = (anim != 3 && anim != 4 && anim != 5) ? "чёрной ": "чёрного ";
+		break;
+	}
+	cout << "Год " << s1 << s2 << endl;
 	return 0;
 }
