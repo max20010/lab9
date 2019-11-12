@@ -1,0 +1,113 @@
+#include "stdafx.h"
+#include "iostream"
+#include "string"
+using namespace std;
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	setlocale(LC_ALL, "ru");
+	string s1, s2, s3;
+	int x,x1,x2,x3;
+	cout << "Введите трехзначное число: ";
+	cin >> x;
+	x3 = x % 10;
+	x1 = x / 100;
+	x2 = (x /10)-x1*10;
+
+	switch (x1)
+	{
+	case 1:s1 = "Сто ";
+		break;
+	case 2:s1 = "Двести ";
+		break;
+	case 3:s1 = "Триста ";
+		break;
+	case 4:s1 = "Четыреста ";
+		break;
+	case 5:s1 = "Пятьсот ";
+		break;
+	case 6:s1 = "Шестьсот ";
+		break;
+	case 7:s1 = "Семьсот ";
+		break;
+	case 8:s1 = "Восемьсот ";
+		break;
+	case 9:s1 = "Девятьсот ";
+		break;
+	}
+	switch (x2)
+	{
+	case 0:s2 = "";
+		break;
+	case 1:
+		s2 = (x3 == 0) ? "десять " : "";
+		break;
+	case 2:s2 = "двадцать ";
+		break;
+	case 3:s2 = "тридцать ";
+		break;
+	case 4:s2 = "сорок ";
+		break;
+	case 5:s2 = "пятьдесят ";
+		break;
+	case 6:s2 = "шестьдесят ";
+		break;
+	case 7:s2 = "семьдесят ";
+		break;
+	case 8:s2 = "восемьдесят ";
+		break;
+	case 9:s2 = "девяносто ";
+		break;
+
+	}
+	if (x2 == 1 && x3 != 0){
+		switch (x3)
+		{
+		case 1: s3 = "Одиннадцать ";
+			break;
+		case 2: s3 = "Двенадцать ";
+			break;
+		case 3: s3 = "Тринадцать ";
+			break;
+		case 4: s3 = "Четырнадцать ";
+			break;
+		case 5: s3 = "Пятнадцать ";
+			break;
+		case 6: s3 = "Шестнадцать ";
+			break;
+		case 7: s3 = "Семнадцать ";
+			break;
+		case 8: s3 = "Восемнадцать ";
+			break;
+		case 9: s3 = "Девятнадцать ";
+			break;
+		}
+	}
+	else
+	{
+		switch (x3)
+		{
+		case 1: s3 = "один ";
+			break;
+		case 2: s3 = "два ";
+			break;
+		case 3: s3 = "три ";
+			break;
+		case 4: s3 = "четыре ";
+			break;
+		case 5: s3 = "пять ";
+			break;
+		case 6: s3 = "шесть ";
+			break;
+		case 7: s3 = "семь ";
+			break;
+		case 8: s3 = "восемь ";
+			break;
+		case 9: s3 = "девять ";
+			break;
+		}
+	}
+		cout << s1 << s2 << s3 << endl;
+	return 0;
+}
+
