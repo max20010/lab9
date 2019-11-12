@@ -1,0 +1,83 @@
+#include "stdafx.h"
+#include "iostream"
+#include "string"
+using namespace std;
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	setlocale(LC_ALL, "ru");
+	int x,d;
+	string x1, x2, x3;
+	cout << "Введите кол-во учебных занятий: ";
+	cin >> x;
+	if (x < 21||x==40){
+		switch(x){
+		case 10: x1 = "Десять ";
+			break;
+		case 11: x1 = "Одиннадцать ";
+			break;
+		case 12: x1 = "Двенадцать ";
+			break;
+		case 13: x1 = "Тринадцать ";
+			break;
+		case 14: x1 = "Четырнадцать ";
+			break;
+		case 15: x1 = "Пятнадцать ";
+			break;
+		case 16: x1 = "Шестнадцать ";
+			break;
+		case 17: x1 = "Семнадцать ";
+			break;
+		case 18: x1 = "Восемнадцать ";
+			break;
+		case 19: x1 = "Девятнадцать ";
+			break;
+		case 20: x1 = "Двадцать ";
+			break;
+		case 40: x1 = "Сорок ";
+			break;
+		}
+		cout << x1 << "учебных заданий" << endl;
+	}
+	else if (x>21 && x<40 && x!=31)
+	{
+		d = x/10;
+		switch (d){
+		case 2: x1 = "Двадцать ";
+			break;
+		case 3: x1 = "Тридцать ";
+			break;
+		}
+		x %= 10;
+		switch (x)
+		{
+		case 2: x2 = "два ";
+			break;
+		case 3: x2 = "три ";
+			break;
+		case 4: x2 = "четыре ";
+			break;
+		case 5: x2 = "пять ";
+			break;
+		case 6: x2 = "шесть ";
+			break;
+		case 7: x2 = "семь ";
+			break;
+		case 8: x2 = "восемь ";
+			break;
+		case 9: x2 = "девять ";
+			break;
+		case 0: x2 = "";
+			break;
+		}
+		cout << x1 << x2 << "учебных занятий" << endl;
+	}
+	else if (x == 21){
+		cout << "Двадцать одно учебное занятие" << endl;
+	}
+	else if (x == 31){
+		cout << "Тридцать одно учебное занятие" << endl;
+	}
+	return 0;
+}
+
